@@ -24,11 +24,9 @@ class Status(enum.Enum):
     REJECTED = "REJECTED"
 
 
-"""
 class Application_type(enum.Enum):
     LEAVE = "LEAVE"
     WFH = "WORK FROM HOME"
-"""
 
 
 class Employee(Base):
@@ -48,6 +46,7 @@ class Employee(Base):
     personal_email_id = Column(VARCHAR)
     is_department_head = Column(BOOLEAN)
     department = relationship("Department")
+    application = relationship("Application")
 
     # application = relationship("Application")
 
@@ -64,12 +63,15 @@ class Department(Base):
     employee = relationship("Employee")
 
 
-"""
 class Application(Base):
     __tablename__ = "applications"
 
-    id = Column(UUID)
-    employee_id = Column(UUID, ForeignKey("employees.id"))
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+    )
+    employee_id = Column(UUID(as_uuid=True), ForeignKey("employees.id"))
     application_type = Column(Enum(Application_type))
     from_date = Column(TIMESTAMP)
     to_date = Column(TIMESTAMP)
@@ -78,4 +80,4 @@ class Application(Base):
     status = Column(Enum(Status))
     balance_before_approval = Column(INTEGER)
     balance_after_approval = Column(INTEGER)
-"""
+    employee = relationship("Employee")

@@ -3,7 +3,7 @@ from datetime import date
 
 from pydantic import BaseModel
 
-from models import Gender, Status
+from models import Application_type, Gender, Status
 
 # birth = date.today().strftime("%d-%b-%Y")
 
@@ -50,7 +50,7 @@ class EmployeeUpdateRequest(BaseModel):
         orm_mode = True
 
 
-# ********************* Working on Department table ****************
+# ********************* Working on Department table *********************
 
 
 class DepartmentCreateRequest(BaseModel):
@@ -70,6 +70,50 @@ class DepartmentResponse(BaseModel):
 
 class DepartmentUpdateRequest(BaseModel):
     name: str | None
+
+    class Config:
+        orm_mode = True
+
+
+# *********************** Working on Application Table  **************
+
+
+class CreateApplicationRequest(BaseModel):
+    application_type: Application_type
+    from_date: date
+    to_date: date
+    subject: str
+    reason: str
+    status: Status
+    balance_before_approval: int
+    balance_after_approval: int
+
+    class Config:
+        orm_mode = True
+
+
+class UpdateApplicationRequest(BaseModel):
+    application_type: Application_type | None
+    from_date: date | None
+    to_date: date | None
+    subject: str | None
+    reason: str | None
+    balance_before_approval: int | None
+    balance_after_approval: int | None
+
+    class Config:
+        orm_mode = True
+
+
+class ApplicationResponse(BaseModel):
+    id: uuid.UUID
+    employee_id: uuid.UUID | None
+    from_date: date | None
+    to_date: date | None
+    subject: str | None
+    reason: str | None
+    balance_before_approval: int | None
+    balance_after_approval: int | None
 
     class Config:
         orm_mode = True

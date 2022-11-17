@@ -7,7 +7,7 @@ from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Query, Session
 
 from db import Base, SessionLocal, engin
-from models import Base, Department, Employee, Gender, Status
+from models import Application, Base, Department, Employee, Gender, Status
 from validators import *
 
 Base.metadata.create_all(bind=engin)
@@ -166,6 +166,9 @@ async def create_department(
     department: DepartmentCreateRequest,
     db: Session = Depends(get_db),
 ):
+    duplicate_department = db.query(Department).filter(Department.name == department.name).first()
+    if duplicate_department:
+        raise HTTPException(status_code=403, detail=f"{department.name} already exist. ")
     add_dprt = Department(**department.dict())
     try:
         db.add(add_dprt)
@@ -228,6 +231,121 @@ async def delete_department(
     try:
         db.delete(DataInDpt)
         db.commit()
-        return {"Message": f"Department {DataInDpt.id} delete successfully. "}
+        return {"Message": f"{DataInDpt.name} deleted successfully. "}
+    except Exception as error:
+        return error
+
+
+# ******************** Working on Application Table ***********************
+
+
+@app.get(
+    "/application/",
+    tags=["Applications"],
+    response_model=List[ApplicationResponse],
+)
+async def all_applications(
+    status: Status | None = None,
+    application_type: Application_type | None = None,
+    search: str | None = None,
+    application_by_employee_id: uuid.UUID | None = None,
+    db: Session = Depends(get_db),
+):
+    query = db.query(Application)
+    if status:
+        query = query.filter(Application.status == status)
+    if application_type:
+        query = query.filter(Application.application_type == application_type)
+    if search:
+        query = query.filter(Application.reason.ilike(f"%{search}%"))
+    if application_by_employee_id:
+        query = query.filter(Application.employee_id == application_by_employee_id)
+
+    application_data = query.all()
+    return application_data
+
+
+@app.post(
+    "/application/",
+    tags=["Applications"],
+    response_model=ApplicationResponse,
+)
+async def create_application(
+    emp_application: CreateApplicationRequest,
+    db: Session = Depends(get_db),
+):
+    apl_typ = (
+        db.query(Application)
+        .filter(Application.application_type == emp_application.application_type)
+        .first(),
+    )
+    if apl_typ:
+        raise HTTPException(
+            status_code=403,
+            detail=f"{apl_typ.id} already taken {apl_typ.application_type}",
+        )
+    try:
+        application_data = Application(**emp_application.dict())
+        db.add(application_data)
+        db.commit()
+        db.refresh(application_data)
+        return application_data
+    except Exception as error:
+        return error
+
+
+@app.get(
+    "/application/{application_id}/",
+    response_model=ApplicationResponse,
+    tags=["Applications"],
+)
+async def application_by_id(
+    application_id: uuid.UUID,
+    db: Session = Depends(get_db),
+):
+    query = db.query(Application).where(Application.id == application_id).first()
+    if not query:
+        raise HTTPException(status_code=404, detail="Application not found. ")
+    return query
+
+
+@app.patch(
+    "/application/{application_id}/",
+    response_model=ApplicationResponse,
+    tags=["Applications"],
+)
+async def update_application_by_id(
+    application_id: uuid.UUID,
+    user_input: UpdateApplicationRequest,
+    db: Session = Depends(get_db),
+):
+    query = db.query(Application).where(Application.id == application_id).first()
+    try:
+        if not query:
+            raise HTTPException(status_code=404, detail="Application not found. ")
+        update_data = user_input.dict(exclude_unset=True)
+        for field in query.__dict__:
+            if field in update_data:
+                setattr(query, field, update_data[field])
+        db.add(query)
+        db.commit()
+        db.refresh(query)
+        return query
+    except Exception as error:
+        return error
+
+
+@app.delete("/application/{application_id}/", tags=["Applications"])
+async def delete_application_by_id(
+    application_id: uuid.UUID,
+    db: Session = Depends(get_db),
+):
+    query = db.query(Application).where(Application.id == application_id).first()
+    if not query:
+        raise HTTPException(status_code=404, detail="Application not found. ")
+    try:
+        db.delete(query)
+        db.commit()
+        return {"message": f"Application {query.id} deleted successfully. "}
     except Exception as error:
         return error
