@@ -274,15 +274,21 @@ async def create_application(
     emp_application: CreateApplicationRequest,
     db: Session = Depends(get_db),
 ):
-    apl_typ = (
+    query = (
         db.query(Application)
+        .join(Employee, Department)
         .filter(Application.application_type == emp_application.application_type)
-        .first(),
+        .filter(Department.id == Employee.department_id)
+        .filter(Application.from_date == emp_application.from_date)
+        # .filter(Application.to_date == emp_application.to_date)
+        .first()
     )
-    if apl_typ:
+    print(query, "\n\n\n\n\n\n\n")
+    if query:
+        print(query.__dict__)
         raise HTTPException(
             status_code=403,
-            detail=f"{apl_typ.id} already taken {apl_typ.application_type}",
+            detail="WFH already taken",
         )
     try:
         application_data = Application(**emp_application.dict())

@@ -80,6 +80,7 @@ class DepartmentUpdateRequest(BaseModel):
 
 class CreateApplicationRequest(BaseModel):
     application_type: Application_type
+    employee_id: uuid.UUID | None
     from_date: date
     to_date: date
     subject: str
@@ -94,6 +95,7 @@ class CreateApplicationRequest(BaseModel):
 
 class UpdateApplicationRequest(BaseModel):
     application_type: Application_type | None
+    employee_id: uuid.UUID | None
     from_date: date | None
     to_date: date | None
     subject: str | None
