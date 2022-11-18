@@ -1,0 +1,124 @@
+2022-11-18 16:59:17,620 -- This is my debug file.
+2022-11-18 16:59:26,043 -- This is my debug file.
+2022-11-18 16:59:30,915 -- BEGIN (implicit)
+2022-11-18 16:59:30,920 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees
+2022-11-18 16:59:30,923 -- [generated in 0.00257s] {}
+2022-11-18 16:59:30,943 -- ROLLBACK
+2022-11-18 17:00:37,323 -- This is my debug file.
+2022-11-18 17:01:04,378 -- This is my debug file.
+2022-11-18 17:01:28,200 -- BEGIN (implicit)
+2022-11-18 17:01:28,204 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees 
+WHERE employees.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:01:28,205 -- [generated in 0.00056s] {'id_1': UUID('3fa85f64-5717-4562-b3fc-2c963f66afa6'), 'param_1': 1}
+2022-11-18 17:01:28,222 -- EMployee Not found
+NoneType: None
+2022-11-18 17:01:28,223 -- ROLLBACK
+2022-11-18 17:03:28,010 -- This is my debug file.
+2022-11-18 17:03:33,976 -- This is my debug file.
+2022-11-18 17:03:52,871 -- This is my debug file.
+2022-11-18 17:05:01,715 -- This is my debug file.
+2022-11-18 17:05:49,673 -- This is my debug file.
+2022-11-18 17:06:09,705 -- This is my debug file.
+2022-11-18 17:07:44,271 -- This is my debug file.
+2022-11-18 17:08:50,798 -- This is my debug file.
+2022-11-18 17:09:17,039 -- This is my debug file.
+2022-11-18 17:09:38,359 -- This is my debug file.
+2022-11-18 17:10:08,839 -- This is my debug file.
+2022-11-18 17:10:46,257 -- This is my debug file.
+2022-11-18 17:12:09,750 -- This is my debug file.
+2022-11-18 17:12:37,524 -- This is my debug file.
+2022-11-18 17:13:04,550 -- This is my debug file.
+2022-11-18 17:13:25,154 -- This is my debug file.
+2022-11-18 17:14:12,715 -- This is my debug file.
+2022-11-18 17:15:01,594 -- BEGIN (implicit)
+2022-11-18 17:15:01,600 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications JOIN employees ON employees.id = applications.employee_id JOIN departments ON departments.id = employees.department_id 
+WHERE applications.application_type = %(application_type_1)s AND departments.id = employees.department_id AND applications.from_date = %(from_date_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:15:01,609 -- [generated in 0.00903s] {'application_type_1': 'LEAVE', 'from_date_1': datetime.date(2022, 11, 18), 'param_1': 1}
+2022-11-18 17:15:01,647 -- Work From Home already taken from the same department. 
+2022-11-18 17:15:01,648 -- ROLLBACK
+2022-11-18 17:15:38,946 -- BEGIN (implicit)
+2022-11-18 17:15:38,947 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications JOIN employees ON employees.id = applications.employee_id JOIN departments ON departments.id = employees.department_id 
+WHERE applications.application_type = %(application_type_1)s AND departments.id = employees.department_id AND applications.from_date = %(from_date_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:15:38,948 -- [cached since 37.35s ago] {'application_type_1': 'LEAVE', 'from_date_1': datetime.date(2022, 11, 17), 'param_1': 1}
+2022-11-18 17:15:38,950 -- Work From Home already taken from the same department. 
+2022-11-18 17:15:38,956 -- ROLLBACK
+2022-11-18 17:16:18,657 -- BEGIN (implicit)
+2022-11-18 17:16:18,659 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications
+2022-11-18 17:16:18,659 -- [generated in 0.00065s] {}
+2022-11-18 17:16:18,666 -- ROLLBACK
+2022-11-18 17:16:51,889 -- BEGIN (implicit)
+2022-11-18 17:16:51,892 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications 
+WHERE applications.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:16:51,893 -- [generated in 0.00073s] {'id_1': UUID('692745df-b7b0-49f7-8d2f-d97017410f2b'), 'param_1': 1}
+2022-11-18 17:16:51,897 -- DELETE FROM applications WHERE applications.id = %(id)s
+2022-11-18 17:16:51,897 -- [generated in 0.00045s] {'id': UUID('692745df-b7b0-49f7-8d2f-d97017410f2b')}
+2022-11-18 17:16:51,907 -- COMMIT
+2022-11-18 17:16:51,913 -- Application 692745df-b7b0-49f7-8d2f-d97017410f2b deleted successfully. 
+2022-11-18 17:19:26,332 -- BEGIN (implicit)
+2022-11-18 17:19:26,334 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications 
+WHERE applications.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:19:26,337 -- [cached since 154.4s ago] {'id_1': UUID('38d3a73e-382d-462f-a335-c79346f5d905'), 'param_1': 1}
+2022-11-18 17:19:26,344 -- DELETE FROM applications WHERE applications.id = %(id)s
+2022-11-18 17:19:26,345 -- [cached since 154.4s ago] {'id': UUID('38d3a73e-382d-462f-a335-c79346f5d905')}
+2022-11-18 17:19:26,348 -- COMMIT
+2022-11-18 17:19:26,351 -- Application 38d3a73e-382d-462f-a335-c79346f5d905 deleted successfully. 
+2022-11-18 17:20:20,734 -- BEGIN (implicit)
+2022-11-18 17:20:20,735 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications 
+WHERE applications.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:20:20,738 -- [cached since 208.8s ago] {'id_1': UUID('dcbc2784-c91f-42a5-9007-c9ff028da4d5'), 'param_1': 1}
+2022-11-18 17:20:20,747 -- DELETE FROM applications WHERE applications.id = %(id)s
+2022-11-18 17:20:20,747 -- [cached since 208.9s ago] {'id': UUID('dcbc2784-c91f-42a5-9007-c9ff028da4d5')}
+2022-11-18 17:20:20,749 -- COMMIT
+2022-11-18 17:20:20,752 -- Application dcbc2784-c91f-42a5-9007-c9ff028da4d5 deleted successfully. 
+2022-11-18 17:20:48,147 -- BEGIN (implicit)
+2022-11-18 17:20:48,148 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications
+2022-11-18 17:20:48,151 -- [cached since 269.5s ago] {}
+2022-11-18 17:20:48,167 -- ROLLBACK
+2022-11-18 17:21:40,600 -- This is my debug file.
+2022-11-18 17:21:50,661 -- This is my debug file.
+2022-11-18 17:23:46,692 -- BEGIN (implicit)
+2022-11-18 17:23:46,697 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications JOIN employees ON employees.id = applications.employee_id JOIN departments ON departments.id = employees.department_id 
+WHERE applications.application_type = %(application_type_1)s AND departments.id = employees.department_id AND applications.from_date = %(from_date_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:23:46,705 -- [generated in 0.00808s] {'application_type_1': 'LEAVE', 'from_date_1': datetime.date(2022, 11, 23), 'param_1': 1}
+2022-11-18 17:23:46,724 -- INSERT INTO applications (id, employee_id, application_type, from_date, to_date, subject, reason, status, balance_before_approval, balance_after_approval) VALUES (%(id)s, %(employee_id)s, %(application_type)s, %(from_date)s, %(to_date)s, %(subject)s, %(reason)s, %(status)s, %(balance_before_approval)s, %(balance_after_approval)s)
+2022-11-18 17:23:46,725 -- [generated in 0.00070s] {'id': UUID('fb57ad01-6230-46cd-902f-254f7cb988bd'), 'employee_id': None, 'application_type': 'LEAVE', 'from_date': datetime.date(2022, 11, 23), 'to_date': datetime.date(2022, 11, 24), 'subject': 'string', 'reason': 'string', 'status': 'PENDING', 'balance_before_approval': 1789, 'balance_after_approval': 1789}
+2022-11-18 17:23:46,736 -- COMMIT
+2022-11-18 17:23:46,740 -- BEGIN (implicit)
+2022-11-18 17:23:46,743 -- SELECT applications.id, applications.employee_id, applications.application_type, applications.from_date, applications.to_date, applications.subject, applications.reason, applications.status, applications.balance_before_approval, applications.balance_after_approval 
+FROM applications 
+WHERE applications.id = %(pk_1)s
+2022-11-18 17:23:46,743 -- [generated in 0.00048s] {'pk_1': UUID('fb57ad01-6230-46cd-902f-254f7cb988bd')}
+2022-11-18 17:23:46,752 -- ROLLBACK
+2022-11-18 17:24:07,673 -- BEGIN (implicit)
+2022-11-18 17:24:07,675 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications
+2022-11-18 17:24:07,675 -- [generated in 0.00072s] {}
+2022-11-18 17:24:07,681 -- ROLLBACK
+2022-11-18 17:24:42,035 -- BEGIN (implicit)
+2022-11-18 17:24:42,038 -- SELECT applications.id AS applications_id, applications.employee_id AS applications_employee_id, applications.application_type AS applications_application_type, applications.from_date AS applications_from_date, applications.to_date AS applications_to_date, applications.subject AS applications_subject, applications.reason AS applications_reason, applications.status AS applications_status, applications.balance_before_approval AS applications_balance_before_approval, applications.balance_after_approval AS applications_balance_after_approval 
+FROM applications 
+WHERE applications.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-18 17:24:42,039 -- [generated in 0.00065s] {'id_1': UUID('7e79a05c-9dfa-485b-bfc2-acd59d824dee'), 'param_1': 1}
+2022-11-18 17:24:42,042 -- DELETE FROM applications WHERE applications.id = %(id)s
+2022-11-18 17:24:42,043 -- [generated in 0.00056s] {'id': UUID('7e79a05c-9dfa-485b-bfc2-acd59d824dee')}
+2022-11-18 17:24:42,045 -- COMMIT
+2022-11-18 17:24:42,048 -- Application 7e79a05c-9dfa-485b-bfc2-acd59d824dee deleted successfully. 
+2022-11-18 17:25:26,179 -- This is my debug file.
