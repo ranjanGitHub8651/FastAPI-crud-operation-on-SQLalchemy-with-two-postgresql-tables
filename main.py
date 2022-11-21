@@ -1,6 +1,7 @@
 import logging
 import uuid
-from logging.config import dictConfig
+
+# from logging.config import dictConfig
 from typing import List
 
 from fastapi import Depends, FastAPI, HTTPException
@@ -9,7 +10,16 @@ from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Query, Session
 
 from db import Base, SessionLocal, engin
-from models import Application, Base, Department, Employee, Gender, Status
+from models import (
+    Application,
+    Base,
+    Department,
+    Employee,
+    EmployeeLanguage,
+    Gender,
+    Language,
+    Status,
+)
 from validators import *
 
 Base.metadata.create_all(bind=engin)
@@ -21,7 +31,7 @@ logging.basicConfig(
     format=formate_time,
 )
 log = logging.getLogger(__name__)
-log.debug("This is my debug file.")
+# log.debug("This is my debug file.")
 app = FastAPI(debug=True)
 
 
@@ -44,6 +54,7 @@ async def all_employees(
     email: str | None = None,
     department_id: uuid.UUID | None = None,
     search: str | None = None,
+    language_id: uuid.UUID | None = None,
     db: Session = Depends(get_db),
 ):
     """_Description:_
@@ -59,6 +70,7 @@ async def all_employees(
         Search --> Optional, Description --> Search via first name.
 
     """
+
     query = db.query(Employee)
     if gender:
         query = query.filter(Employee.gender == gender)
@@ -68,6 +80,13 @@ async def all_employees(
         query = query.filter(Employee.first_name.ilike(f"%{search}%"))
     if department_id:
         query = query.filter(Employee.department_id == department_id)
+    if language_id:
+        query = (
+            query.join(EmployeeLanguage, Language)
+            .filter(Employee.id == EmployeeLanguage.employee_id)
+            .filter(EmployeeLanguage.language_id == language_id)
+        )
+
     all_data = query.all()
     return all_data
 
@@ -557,3 +576,139 @@ async def delete_application_by_id(
         return {"message": f"Application {query.id} deleted successfully. "}
     except Exception as error:
         return error
+
+
+# ************************** Working on Language Table ************************
+
+
+@app.get(
+    "/language/",
+    tags=["Languages"],
+    response_model=List[LanguageResponse],
+)
+async def all_languages(
+    search: str | None = None,
+    db: Session = Depends(get_db),
+):
+    query = db.query(Language)
+    if search:
+        query = query.filter(Language.name.ilike(f"%{search}%"))
+    query = query.all()
+
+    return query
+
+
+@app.post("/language/", tags=["Languages"], response_model=LanguageResponse)
+async def create_language(user_input: CreateLanguage, db: Session = Depends(get_db)):
+    query = db.query(Language).filter(Language.name == user_input.name).first()
+    if query:
+        raise HTTPException(status_code=403, detail=f"{user_input.name} language already exist. ")
+
+    add_lang = Language(**user_input.dict())
+    try:
+        db.add(add_lang)
+        db.commit()
+        db.refresh(add_lang)
+        return add_lang
+    except Exception as error:
+        return error
+
+
+@app.get("/language/{lang_id}/", tags=["Languages"], response_model=LanguageResponse)
+async def language_by_id(lang_id: uuid.UUID, db: Session = Depends(get_db)):
+    query = db.query(Language).filter(Language.id == lang_id).first()
+    if not query:
+        raise HTTPException(status_code=404, detail=f"{lang_id} not found. ")
+    return query
+
+
+@app.patch("/language/{lang_id}/", tags=["Languages"], response_model=LanguageResponse)
+async def update_language_by_id(
+    lang_id: uuid.UUID,
+    user_input: UpdateLanguage,
+    db: Session = Depends(get_db),
+):
+    # lng_name = db.query(Language).filter(Language.name == user_input.name).first()
+    # if lng_name:
+    #     raise HTTPException(status_code=403, detail=f"{user_input.name} already exist. ")
+    query = db.query(Language).where(Language.id == lang_id).first()
+    try:
+        if not query:
+            raise HTTPException(status_code=404, detail=f"{lang_id} not found. ")
+
+        update_data = user_input.dict(exclude_unset=True)
+        for field in update_data:
+            if field in update_data:
+                setattr(query, field, update_data[field])
+        db.add(query)
+        db.commit()
+        db.refresh(query)
+        return query
+    except Exception as error:
+        return error
+
+
+@app.delete(
+    "/language/{lang_id}/",
+    tags=["Languages"],
+)
+async def delete_language_by_id(lang_id: uuid.UUID, db: Session = Depends(get_db)):
+    query = db.query(Language).where(Language.id == lang_id).first()
+    if not query:
+        raise HTTPException(status_code=404, detail=f"{lang_id} not found. ")
+    db.delete(query)
+    db.commit()
+    return {"Message": f"{lang_id} deleted successfully. "}
+
+
+# ***************** Working on EmployeeLanguages Table ***********************
+
+
+@app.get(
+    "/employeelanguages/",
+    tags=["Employee Languages"],
+    response_model=List[ResponseEmployeeLanguages],
+)
+async def all_employee_languages(db: Session = Depends(get_db)):
+    query = db.query(EmployeeLanguage).all()
+    return query
+
+
+@app.post(
+    "/employeelanguage/",
+    tags=["Employee Languages"],
+    response_model=ResponseEmployeeLanguages,
+)
+async def create_emp_lang(
+    user_input: CreateEmployeeLangaugaes,
+    db: Session = Depends(get_db),
+):
+    add_data = EmployeeLanguage(**user_input.dict())
+    try:
+        db.add(add_data)
+        db.commit()
+        db.refresh(add_data)
+        return add_data
+    except Exception as error:
+        return error
+
+
+@app.patch(
+    "/employeelanguages/{emplng_id}/",
+    tags=["Employee Languages"],
+    response_model=ResponseEmployeeLanguages,
+)
+async def update_employee_language_id(
+    emplng_id: uuid.UUID,
+    user_input: UpdateEmployeLanguage,
+    db: Session = Depends(get_db),
+):
+    query = db.query(EmployeeLanguage).where(EmployeeLanguage.id == emplng_id).first()
+    update_data = user_input.dict(exclude_unset=True)
+    for field in update_data:
+        if field in update_data:
+            setattr(db, field, update_data[field])
+    db.add(query)
+    db.commit()
+    db.refresh(query)
+    return query

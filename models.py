@@ -81,3 +81,32 @@ class Application(Base):
     balance_before_approval = Column(INTEGER)
     balance_after_approval = Column(INTEGER)
     employee = relationship("Employee")
+
+
+class Language(Base):
+    __tablename__ = "languages"
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+    )
+    name = Column(VARCHAR)
+
+
+class EmployeeLanguage(Base):
+    __tablename__ = "employeeslanguages"
+
+    id = Column(
+        UUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+    )
+    employee_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("employees.id"),
+    )
+    language_id = Column(
+        UUID(as_uuid=True),
+        ForeignKey("languages.id"),
+    )

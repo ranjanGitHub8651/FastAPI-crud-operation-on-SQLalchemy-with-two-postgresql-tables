@@ -122,3 +122,689 @@ WHERE applications.id = %(id_1)s
 2022-11-18 17:24:42,045 -- COMMIT
 2022-11-18 17:24:42,048 -- Application 7e79a05c-9dfa-485b-bfc2-acd59d824dee deleted successfully. 
 2022-11-18 17:25:26,179 -- This is my debug file.
+2022-11-18 18:54:41,767 -- This is my debug file.
+2022-11-21 14:46:33,773 -- BEGIN (implicit)
+2022-11-21 14:46:34,082 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:46:34,083 -- [generated in 0.00158s] {'id': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312'), 'name': 'Python'}
+2022-11-21 14:46:34,114 -- COMMIT
+2022-11-21 14:46:34,123 -- BEGIN (implicit)
+2022-11-21 14:46:34,133 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:46:34,135 -- [generated in 0.00121s] {'pk_1': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312')}
+2022-11-21 14:46:34,168 -- ROLLBACK
+2022-11-21 14:46:51,434 -- BEGIN (implicit)
+2022-11-21 14:46:51,436 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:46:51,437 -- [cached since 17.35s ago] {'id': UUID('61031184-5f07-461c-80b0-69bfe17f2b01'), 'name': 'Java'}
+2022-11-21 14:46:51,440 -- COMMIT
+2022-11-21 14:46:51,442 -- BEGIN (implicit)
+2022-11-21 14:46:51,448 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:46:51,449 -- [cached since 17.31s ago] {'pk_1': UUID('61031184-5f07-461c-80b0-69bfe17f2b01')}
+2022-11-21 14:46:51,453 -- ROLLBACK
+2022-11-21 14:47:10,509 -- BEGIN (implicit)
+2022-11-21 14:47:10,510 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:47:10,510 -- [cached since 36.43s ago] {'id': UUID('1d677437-7dcc-4d61-8286-8f48c1796769'), 'name': 'C#'}
+2022-11-21 14:47:10,514 -- COMMIT
+2022-11-21 14:47:10,518 -- BEGIN (implicit)
+2022-11-21 14:47:10,519 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:47:10,519 -- [cached since 36.39s ago] {'pk_1': UUID('1d677437-7dcc-4d61-8286-8f48c1796769')}
+2022-11-21 14:47:10,523 -- ROLLBACK
+2022-11-21 14:47:19,358 -- BEGIN (implicit)
+2022-11-21 14:47:19,359 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:47:19,359 -- [cached since 45.28s ago] {'id': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45'), 'name': 'C++'}
+2022-11-21 14:47:19,361 -- COMMIT
+2022-11-21 14:47:19,365 -- BEGIN (implicit)
+2022-11-21 14:47:19,367 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:47:19,367 -- [cached since 45.23s ago] {'pk_1': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45')}
+2022-11-21 14:47:19,371 -- ROLLBACK
+2022-11-21 14:47:39,332 -- BEGIN (implicit)
+2022-11-21 14:47:39,334 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:47:39,335 -- [cached since 65.25s ago] {'id': UUID('93b7dce5-7f17-426b-9a5e-8b35af2c6dcd'), 'name': 'Dot Net'}
+2022-11-21 14:47:39,336 -- COMMIT
+2022-11-21 14:47:39,340 -- BEGIN (implicit)
+2022-11-21 14:47:39,341 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:47:39,342 -- [cached since 65.21s ago] {'pk_1': UUID('93b7dce5-7f17-426b-9a5e-8b35af2c6dcd')}
+2022-11-21 14:47:39,347 -- ROLLBACK
+2022-11-21 14:47:47,008 -- BEGIN (implicit)
+2022-11-21 14:47:47,009 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:47:47,009 -- [cached since 72.93s ago] {'id': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2'), 'name': 'Python'}
+2022-11-21 14:47:47,012 -- COMMIT
+2022-11-21 14:47:47,018 -- BEGIN (implicit)
+2022-11-21 14:47:47,019 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:47:47,019 -- [cached since 72.89s ago] {'pk_1': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2')}
+2022-11-21 14:47:47,022 -- ROLLBACK
+2022-11-21 14:47:55,109 -- BEGIN (implicit)
+2022-11-21 14:47:55,110 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:47:55,110 -- [cached since 81.03s ago] {'id': UUID('790d8c48-df70-4fb7-9383-111cf78fc4fa'), 'name': 'Java'}
+2022-11-21 14:47:55,111 -- COMMIT
+2022-11-21 14:47:55,115 -- BEGIN (implicit)
+2022-11-21 14:47:55,116 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:47:55,117 -- [cached since 80.98s ago] {'pk_1': UUID('790d8c48-df70-4fb7-9383-111cf78fc4fa')}
+2022-11-21 14:47:55,121 -- ROLLBACK
+2022-11-21 14:48:06,053 -- BEGIN (implicit)
+2022-11-21 14:48:06,056 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:48:06,057 -- [cached since 91.98s ago] {'id': UUID('56a01eaa-f929-491a-b791-84b6d14b9593'), 'name': 'Dot Net'}
+2022-11-21 14:48:06,061 -- COMMIT
+2022-11-21 14:48:06,071 -- BEGIN (implicit)
+2022-11-21 14:48:06,073 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:48:06,074 -- [cached since 91.94s ago] {'pk_1': UUID('56a01eaa-f929-491a-b791-84b6d14b9593')}
+2022-11-21 14:48:06,082 -- ROLLBACK
+2022-11-21 14:48:26,119 -- BEGIN (implicit)
+2022-11-21 14:48:26,119 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:48:26,120 -- [cached since 112s ago] {'id': UUID('7886fdf6-509e-4024-9f4e-9b11c68efdc2'), 'name': 'HTML5 & CSS#'}
+2022-11-21 14:48:26,122 -- COMMIT
+2022-11-21 14:48:26,126 -- BEGIN (implicit)
+2022-11-21 14:48:26,126 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:48:26,127 -- [cached since 112s ago] {'pk_1': UUID('7886fdf6-509e-4024-9f4e-9b11c68efdc2')}
+2022-11-21 14:48:26,133 -- ROLLBACK
+2022-11-21 14:48:39,642 -- BEGIN (implicit)
+2022-11-21 14:48:39,644 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:48:39,645 -- [cached since 125.6s ago] {'id': UUID('ee9afdc2-7d64-4973-998c-58c39568517e'), 'name': 'HTML5 & CSS3'}
+2022-11-21 14:48:39,648 -- COMMIT
+2022-11-21 14:48:39,653 -- BEGIN (implicit)
+2022-11-21 14:48:39,654 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:48:39,655 -- [cached since 125.5s ago] {'pk_1': UUID('ee9afdc2-7d64-4973-998c-58c39568517e')}
+2022-11-21 14:48:39,658 -- ROLLBACK
+2022-11-21 14:48:57,129 -- BEGIN (implicit)
+2022-11-21 14:48:57,130 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 14:48:57,133 -- [generated in 0.00196s] {}
+2022-11-21 14:48:57,138 -- ROLLBACK
+2022-11-21 14:52:45,845 -- BEGIN (implicit)
+2022-11-21 14:52:45,849 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:52:45,850 -- [generated in 0.00068s] {'name_1': 'Python', 'param_1': 1}
+2022-11-21 14:52:45,869 -- ROLLBACK
+2022-11-21 14:53:01,776 -- BEGIN (implicit)
+2022-11-21 14:53:01,777 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:53:01,778 -- [cached since 15.93s ago] {'name_1': 'Java', 'param_1': 1}
+2022-11-21 14:53:01,780 -- ROLLBACK
+2022-11-21 14:53:30,274 -- BEGIN (implicit)
+2022-11-21 14:53:30,279 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:53:30,279 -- [generated in 0.00066s] {'name_1': 'C++', 'param_1': 1}
+2022-11-21 14:53:30,285 -- ROLLBACK
+2022-11-21 14:53:49,704 -- BEGIN (implicit)
+2022-11-21 14:53:49,705 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:53:49,709 -- [cached since 19.43s ago] {'name_1': 'MySQL', 'param_1': 1}
+2022-11-21 14:53:49,715 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 14:53:49,716 -- [generated in 0.00079s] {'id': UUID('9703ed1e-c747-4905-8d90-3fdc480c3fdf'), 'name': 'MySQL'}
+2022-11-21 14:53:49,718 -- COMMIT
+2022-11-21 14:53:49,726 -- BEGIN (implicit)
+2022-11-21 14:53:49,728 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 14:53:49,728 -- [generated in 0.00057s] {'pk_1': UUID('9703ed1e-c747-4905-8d90-3fdc480c3fdf')}
+2022-11-21 14:53:49,732 -- ROLLBACK
+2022-11-21 14:57:52,601 -- BEGIN (implicit)
+2022-11-21 14:57:52,605 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 14:57:52,606 -- [generated in 0.00067s] {}
+2022-11-21 14:57:52,616 -- ROLLBACK
+2022-11-21 14:58:15,975 -- BEGIN (implicit)
+2022-11-21 14:58:15,977 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:58:15,977 -- [generated in 0.00058s] {'id_1': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312'), 'param_1': 1}
+2022-11-21 14:58:15,983 -- ROLLBACK
+2022-11-21 14:59:04,868 -- BEGIN (implicit)
+2022-11-21 14:59:04,870 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 14:59:04,871 -- [cached since 48.89s ago] {'id_1': UUID('7e9841ad-2316-4fda-98d1-95e3cf10d312'), 'param_1': 1}
+2022-11-21 14:59:04,875 -- ROLLBACK
+2022-11-21 15:00:50,005 -- BEGIN (implicit)
+2022-11-21 15:00:50,010 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:00:50,011 -- [generated in 0.00077s] {'id_1': UUID('7e9841ad-2316-4fda-98d1-95e3cf10d312'), 'param_1': 1}
+2022-11-21 15:00:50,015 -- ROLLBACK
+2022-11-21 15:11:58,409 -- BEGIN (implicit)
+2022-11-21 15:11:58,413 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:11:58,414 -- [generated in 0.00061s] {'id_1': UUID('1d677437-7dcc-4d61-8286-8f48c1796769'), 'param_1': 1}
+2022-11-21 15:11:58,423 -- UPDATE languages SET name=%(name)s WHERE languages.id = %(languages_id)s
+2022-11-21 15:11:58,423 -- [generated in 0.00064s] {'name': 'Python', 'languages_id': UUID('1d677437-7dcc-4d61-8286-8f48c1796769')}
+2022-11-21 15:11:58,432 -- COMMIT
+2022-11-21 15:11:58,439 -- BEGIN (implicit)
+2022-11-21 15:11:58,441 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:11:58,442 -- [generated in 0.00058s] {'pk_1': UUID('1d677437-7dcc-4d61-8286-8f48c1796769')}
+2022-11-21 15:11:58,445 -- ROLLBACK
+2022-11-21 15:12:13,529 -- BEGIN (implicit)
+2022-11-21 15:12:13,531 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:12:13,531 -- [generated in 0.00068s] {}
+2022-11-21 15:12:13,535 -- ROLLBACK
+2022-11-21 15:17:43,142 -- BEGIN (implicit)
+2022-11-21 15:17:43,145 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:17:43,149 -- [generated in 0.00295s] {}
+2022-11-21 15:17:43,155 -- ROLLBACK
+2022-11-21 15:18:20,377 -- BEGIN (implicit)
+2022-11-21 15:18:20,380 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:18:20,380 -- [generated in 0.00064s] {'id_1': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45'), 'param_1': 1}
+2022-11-21 15:18:20,387 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:18:20,388 -- [generated in 0.00070s] {'name_1': 'Python', 'param_1': 1}
+2022-11-21 15:18:20,390 -- ROLLBACK
+2022-11-21 15:20:23,806 -- BEGIN (implicit)
+2022-11-21 15:20:23,811 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:20:23,811 -- [generated in 0.00066s] {'name_1': 'Python', 'param_1': 1}
+2022-11-21 15:20:23,816 -- ROLLBACK
+2022-11-21 15:20:48,020 -- BEGIN (implicit)
+2022-11-21 15:20:48,022 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:20:48,024 -- [cached since 24.21s ago] {'name_1': 'SQL', 'param_1': 1}
+2022-11-21 15:20:48,027 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:20:48,028 -- [generated in 0.00058s] {'id_1': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45'), 'param_1': 1}
+2022-11-21 15:20:48,032 -- UPDATE languages SET name=%(name)s WHERE languages.id = %(languages_id)s
+2022-11-21 15:20:48,032 -- [generated in 0.00061s] {'name': 'SQL', 'languages_id': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45')}
+2022-11-21 15:20:48,034 -- COMMIT
+2022-11-21 15:20:48,043 -- BEGIN (implicit)
+2022-11-21 15:20:48,045 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:20:48,045 -- [generated in 0.00062s] {'pk_1': UUID('43dd487a-4213-408b-aa82-60c9cc8e6e45')}
+2022-11-21 15:20:48,049 -- ROLLBACK
+2022-11-21 15:20:56,943 -- BEGIN (implicit)
+2022-11-21 15:20:56,946 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:20:56,946 -- [cached since 33.14s ago] {'name_1': 'SQL', 'param_1': 1}
+2022-11-21 15:20:56,949 -- ROLLBACK
+2022-11-21 15:21:07,575 -- BEGIN (implicit)
+2022-11-21 15:21:07,575 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:21:07,576 -- [cached since 43.77s ago] {'name_1': 'SQL', 'param_1': 1}
+2022-11-21 15:21:07,578 -- ROLLBACK
+2022-11-21 15:21:17,009 -- BEGIN (implicit)
+2022-11-21 15:21:17,010 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:21:17,010 -- [cached since 53.2s ago] {'name_1': 'SQL', 'param_1': 1}
+2022-11-21 15:21:17,013 -- ROLLBACK
+2022-11-21 15:29:40,838 -- BEGIN (implicit)
+2022-11-21 15:29:40,842 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:29:40,843 -- [generated in 0.00089s] {}
+2022-11-21 15:29:40,852 -- ROLLBACK
+2022-11-21 15:30:25,407 -- BEGIN (implicit)
+2022-11-21 15:30:25,409 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:30:25,410 -- [generated in 0.00059s] {'id_1': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2'), 'param_1': 1}
+2022-11-21 15:30:25,412 -- ROLLBACK
+2022-11-21 15:31:06,189 -- BEGIN (implicit)
+2022-11-21 15:31:06,194 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:31:06,195 -- [generated in 0.00074s] {'id_1': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2'), 'param_1': 1}
+2022-11-21 15:31:06,200 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:31:06,201 -- [generated in 0.00064s] {'id': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2')}
+2022-11-21 15:31:06,222 -- COMMIT
+2022-11-21 15:33:38,320 -- BEGIN (implicit)
+2022-11-21 15:33:38,327 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:33:38,327 -- [generated in 0.00078s] {'id_1': UUID('af58ae84-dfe5-4ae4-b93c-b1b1c6b583b2'), 'param_1': 1}
+2022-11-21 15:33:38,333 -- ROLLBACK
+2022-11-21 15:34:01,849 -- BEGIN (implicit)
+2022-11-21 15:34:01,851 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:34:01,851 -- [generated in 0.00062s] {'name_1': 'Python', 'param_1': 1}
+2022-11-21 15:34:01,854 -- ROLLBACK
+2022-11-21 15:34:40,833 -- BEGIN (implicit)
+2022-11-21 15:34:40,834 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:34:40,835 -- [cached since 38.98s ago] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:34:40,839 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:34:40,839 -- [generated in 0.00077s] {'id': UUID('906e13c1-7a7f-4a9f-81c6-7f22f8bb92d9'), 'name': 'DataStructure'}
+2022-11-21 15:34:40,846 -- COMMIT
+2022-11-21 15:34:40,852 -- BEGIN (implicit)
+2022-11-21 15:34:40,855 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:34:40,855 -- [generated in 0.00066s] {'pk_1': UUID('906e13c1-7a7f-4a9f-81c6-7f22f8bb92d9')}
+2022-11-21 15:34:40,858 -- ROLLBACK
+2022-11-21 15:35:03,298 -- BEGIN (implicit)
+2022-11-21 15:35:03,299 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:35:03,301 -- [cached since 84.97s ago] {'id_1': UUID('906e13c1-7a7f-4a9f-81c6-7f22f8bb92d9'), 'param_1': 1}
+2022-11-21 15:35:03,305 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:35:03,306 -- [generated in 0.00056s] {'id': UUID('906e13c1-7a7f-4a9f-81c6-7f22f8bb92d9')}
+2022-11-21 15:35:03,309 -- COMMIT
+2022-11-21 15:35:40,566 -- BEGIN (implicit)
+2022-11-21 15:35:40,569 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:35:40,570 -- [generated in 0.00057s] {}
+2022-11-21 15:35:40,580 -- ROLLBACK
+2022-11-21 15:36:14,184 -- BEGIN (implicit)
+2022-11-21 15:36:14,187 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:36:14,187 -- [generated in 0.00076s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:36:14,192 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:36:14,192 -- [generated in 0.00064s] {'id': UUID('2db26d2f-5bef-4c41-b299-3d2b14b78610'), 'name': 'DataStructure'}
+2022-11-21 15:36:14,198 -- COMMIT
+2022-11-21 15:36:14,204 -- BEGIN (implicit)
+2022-11-21 15:36:14,206 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:36:14,206 -- [generated in 0.00056s] {'pk_1': UUID('2db26d2f-5bef-4c41-b299-3d2b14b78610')}
+2022-11-21 15:36:14,210 -- ROLLBACK
+2022-11-21 15:36:31,101 -- BEGIN (implicit)
+2022-11-21 15:36:31,102 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:36:31,102 -- [cached since 50.53s ago] {}
+2022-11-21 15:36:31,107 -- ROLLBACK
+2022-11-21 15:36:52,802 -- BEGIN (implicit)
+2022-11-21 15:36:52,804 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:36:52,804 -- [generated in 0.00067s] {'id_1': UUID('2db26d2f-5bef-4c41-b299-3d2b14b78610'), 'param_1': 1}
+2022-11-21 15:36:52,808 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:36:52,808 -- [generated in 0.00058s] {'id': UUID('2db26d2f-5bef-4c41-b299-3d2b14b78610')}
+2022-11-21 15:36:52,815 -- COMMIT
+2022-11-21 15:37:19,401 -- BEGIN (implicit)
+2022-11-21 15:37:19,403 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:37:19,404 -- [cached since 98.83s ago] {}
+2022-11-21 15:37:19,409 -- ROLLBACK
+2022-11-21 15:37:26,136 -- BEGIN (implicit)
+2022-11-21 15:37:26,137 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:37:26,137 -- [cached since 33.33s ago] {'id_1': UUID('2db26d2f-5bef-4c41-b299-3d2b14b78610'), 'param_1': 1}
+2022-11-21 15:37:26,139 -- ROLLBACK
+2022-11-21 15:38:50,627 -- BEGIN (implicit)
+2022-11-21 15:38:50,632 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:38:50,635 -- [generated in 0.00383s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:38:50,643 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:38:50,646 -- [generated in 0.00274s] {'id': UUID('317d4873-7112-46a9-af71-f781d4b39cf3'), 'name': 'DataStructure'}
+2022-11-21 15:38:50,652 -- COMMIT
+2022-11-21 15:38:50,657 -- BEGIN (implicit)
+2022-11-21 15:38:50,662 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:38:50,663 -- [generated in 0.00110s] {'pk_1': UUID('317d4873-7112-46a9-af71-f781d4b39cf3')}
+2022-11-21 15:38:50,669 -- ROLLBACK
+2022-11-21 15:39:09,238 -- BEGIN (implicit)
+2022-11-21 15:39:09,240 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 15:39:09,246 -- [generated in 0.00621s] {}
+2022-11-21 15:39:09,255 -- ROLLBACK
+2022-11-21 15:39:34,446 -- BEGIN (implicit)
+2022-11-21 15:39:34,456 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:39:34,459 -- [generated in 0.00265s] {'id_1': UUID('317d4873-7112-46a9-af71-f781d4b39cf3'), 'param_1': 1}
+2022-11-21 15:39:34,464 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:39:34,464 -- [generated in 0.00063s] {'id': UUID('317d4873-7112-46a9-af71-f781d4b39cf3')}
+2022-11-21 15:39:34,471 -- COMMIT
+2022-11-21 15:40:19,097 -- BEGIN (implicit)
+2022-11-21 15:40:19,105 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:40:19,107 -- [generated in 0.00243s] {'id_1': UUID('317d4873-7112-46a9-af71-f781d4b39cf3'), 'param_1': 1}
+2022-11-21 15:40:19,114 -- ROLLBACK
+2022-11-21 15:40:53,915 -- BEGIN (implicit)
+2022-11-21 15:40:53,921 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:40:53,922 -- [generated in 0.00181s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:40:53,929 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:40:53,931 -- [generated in 0.00236s] {'id': UUID('36b125b9-ef7e-4515-b089-c23e55078fa4'), 'name': 'DataStructure'}
+2022-11-21 15:40:53,936 -- COMMIT
+2022-11-21 15:40:53,943 -- BEGIN (implicit)
+2022-11-21 15:40:53,945 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:40:53,946 -- [generated in 0.00103s] {'pk_1': UUID('36b125b9-ef7e-4515-b089-c23e55078fa4')}
+2022-11-21 15:40:53,953 -- ROLLBACK
+2022-11-21 15:41:08,706 -- BEGIN (implicit)
+2022-11-21 15:41:08,708 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:41:08,710 -- [generated in 0.00195s] {'id_1': UUID('36b125b9-ef7e-4515-b089-c23e55078fa4'), 'param_1': 1}
+2022-11-21 15:41:08,722 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:41:08,723 -- [generated in 0.00103s] {'id': UUID('36b125b9-ef7e-4515-b089-c23e55078fa4')}
+2022-11-21 15:41:08,728 -- COMMIT
+2022-11-21 15:41:53,309 -- BEGIN (implicit)
+2022-11-21 15:41:53,315 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:41:53,316 -- [generated in 0.00073s] {'id_1': UUID('36b125b9-ef7e-4515-b089-c23e55078fa4'), 'param_1': 1}
+2022-11-21 15:41:53,324 -- ROLLBACK
+2022-11-21 15:42:19,370 -- BEGIN (implicit)
+2022-11-21 15:42:19,377 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:42:19,378 -- [generated in 0.00212s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:42:19,384 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:42:19,385 -- [generated in 0.00079s] {'id': UUID('52d6fdd7-fe1e-40ac-a8b6-167823dbcb85'), 'name': 'DataStructure'}
+2022-11-21 15:42:19,388 -- COMMIT
+2022-11-21 15:42:19,396 -- BEGIN (implicit)
+2022-11-21 15:42:19,398 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:42:19,400 -- [generated in 0.00238s] {'pk_1': UUID('52d6fdd7-fe1e-40ac-a8b6-167823dbcb85')}
+2022-11-21 15:42:19,408 -- ROLLBACK
+2022-11-21 15:42:38,793 -- BEGIN (implicit)
+2022-11-21 15:42:38,794 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:42:38,796 -- [cached since 45.48s ago] {'id_1': UUID('52d6fdd7-fe1e-40ac-a8b6-167823dbcb85'), 'param_1': 1}
+2022-11-21 15:42:38,802 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:42:38,802 -- [generated in 0.00056s] {'id': UUID('52d6fdd7-fe1e-40ac-a8b6-167823dbcb85')}
+2022-11-21 15:42:38,807 -- COMMIT
+2022-11-21 15:43:08,855 -- BEGIN (implicit)
+2022-11-21 15:43:08,868 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:43:08,869 -- [generated in 0.00088s] {'id_1': UUID('52d6fdd7-fe1e-40ac-a8b6-167823dbcb85'), 'param_1': 1}
+2022-11-21 15:43:08,878 -- ROLLBACK
+2022-11-21 15:43:17,949 -- BEGIN (implicit)
+2022-11-21 15:43:17,954 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:43:17,959 -- [generated in 0.00575s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:43:17,968 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:43:17,969 -- [generated in 0.00096s] {'id': UUID('3c083382-4908-48dc-9dfc-f0461892f6e2'), 'name': 'DataStructure'}
+2022-11-21 15:43:17,981 -- COMMIT
+2022-11-21 15:43:17,987 -- BEGIN (implicit)
+2022-11-21 15:43:17,989 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:43:17,989 -- [generated in 0.00063s] {'pk_1': UUID('3c083382-4908-48dc-9dfc-f0461892f6e2')}
+2022-11-21 15:43:17,996 -- ROLLBACK
+2022-11-21 15:43:32,968 -- BEGIN (implicit)
+2022-11-21 15:43:32,969 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:43:32,971 -- [cached since 24.1s ago] {'id_1': UUID('3c083382-4908-48dc-9dfc-f0461892f6e2'), 'param_1': 1}
+2022-11-21 15:43:32,978 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:43:32,979 -- [generated in 0.00058s] {'id': UUID('3c083382-4908-48dc-9dfc-f0461892f6e2')}
+2022-11-21 15:43:32,983 -- COMMIT
+2022-11-21 15:43:51,502 -- BEGIN (implicit)
+2022-11-21 15:43:51,510 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:43:51,510 -- [generated in 0.00086s] {'id_1': UUID('3c083382-4908-48dc-9dfc-f0461892f6e2'), 'param_1': 1}
+2022-11-21 15:43:51,516 -- ROLLBACK
+2022-11-21 15:43:59,363 -- BEGIN (implicit)
+2022-11-21 15:43:59,373 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name = %(name_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:43:59,383 -- [generated in 0.01043s] {'name_1': 'DataStructure', 'param_1': 1}
+2022-11-21 15:43:59,389 -- INSERT INTO languages (id, name) VALUES (%(id)s, %(name)s)
+2022-11-21 15:43:59,395 -- [generated in 0.00603s] {'id': UUID('bba6ba99-33c6-4ba4-bf12-334ca9a63082'), 'name': 'DataStructure'}
+2022-11-21 15:43:59,399 -- COMMIT
+2022-11-21 15:43:59,404 -- BEGIN (implicit)
+2022-11-21 15:43:59,406 -- SELECT languages.id, languages.name 
+FROM languages 
+WHERE languages.id = %(pk_1)s
+2022-11-21 15:43:59,407 -- [generated in 0.00163s] {'pk_1': UUID('bba6ba99-33c6-4ba4-bf12-334ca9a63082')}
+2022-11-21 15:43:59,416 -- ROLLBACK
+2022-11-21 15:44:15,951 -- BEGIN (implicit)
+2022-11-21 15:44:15,951 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.id = %(id_1)s 
+ LIMIT %(param_1)s
+2022-11-21 15:44:15,954 -- [cached since 24.45s ago] {'id_1': UUID('bba6ba99-33c6-4ba4-bf12-334ca9a63082'), 'param_1': 1}
+2022-11-21 15:44:15,961 -- DELETE FROM languages WHERE languages.id = %(id)s
+2022-11-21 15:44:15,962 -- [generated in 0.00061s] {'id': UUID('bba6ba99-33c6-4ba4-bf12-334ca9a63082')}
+2022-11-21 15:44:15,967 -- COMMIT
+2022-11-21 16:03:52,682 -- BEGIN (implicit)
+2022-11-21 16:03:52,682 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 16:03:52,682 -- [generated in 0.00056s] {}
+2022-11-21 16:03:52,698 -- ROLLBACK
+2022-11-21 16:11:34,944 -- BEGIN (implicit)
+2022-11-21 16:11:34,952 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees
+2022-11-21 16:11:34,960 -- [generated in 0.00380s] {}
+2022-11-21 16:11:35,000 -- ROLLBACK
+2022-11-21 16:12:25,296 -- BEGIN (implicit)
+2022-11-21 16:12:25,304 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 16:12:25,304 -- [generated in 0.00326s] {}
+2022-11-21 16:12:25,328 -- ROLLBACK
+2022-11-21 16:12:51,362 -- BEGIN (implicit)
+2022-11-21 16:12:51,370 -- INSERT INTO employeeslanguages (id, employee_id, language_id) VALUES (%(id)s, %(employee_id)s, %(language_id)s)
+2022-11-21 16:12:51,370 -- [generated in 0.00258s] {'id': UUID('3298cf93-0758-41d9-a095-704802d7a95f'), 'employee_id': UUID('bcd49b62-e70e-4424-af7f-1aa2eeccde14'), 'language_id': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312')}
+2022-11-21 16:12:51,378 -- COMMIT
+2022-11-21 16:12:51,387 -- BEGIN (implicit)
+2022-11-21 16:12:51,387 -- SELECT employeeslanguages.id, employeeslanguages.employee_id, employeeslanguages.language_id 
+FROM employeeslanguages 
+WHERE employeeslanguages.id = %(pk_1)s
+2022-11-21 16:12:51,394 -- [generated in 0.00192s] {'pk_1': UUID('3298cf93-0758-41d9-a095-704802d7a95f')}
+2022-11-21 16:12:51,402 -- ROLLBACK
+2022-11-21 16:13:45,032 -- BEGIN (implicit)
+2022-11-21 16:13:45,032 -- INSERT INTO employeeslanguages (id, employee_id, language_id) VALUES (%(id)s, %(employee_id)s, %(language_id)s)
+2022-11-21 16:13:45,040 -- [cached since 53.67s ago] {'id': UUID('be322c34-54b4-469a-b0c7-440b7abdcbc0'), 'employee_id': UUID('cf53472c-e490-4373-9979-5034c5745994'), 'language_id': UUID('61031184-5f07-461c-80b0-69bfe17f2b01')}
+2022-11-21 16:13:45,048 -- COMMIT
+2022-11-21 16:13:45,056 -- BEGIN (implicit)
+2022-11-21 16:13:45,063 -- SELECT employeeslanguages.id, employeeslanguages.employee_id, employeeslanguages.language_id 
+FROM employeeslanguages 
+WHERE employeeslanguages.id = %(pk_1)s
+2022-11-21 16:13:45,063 -- [cached since 53.67s ago] {'pk_1': UUID('be322c34-54b4-469a-b0c7-440b7abdcbc0')}
+2022-11-21 16:13:45,063 -- ROLLBACK
+2022-11-21 16:14:59,657 -- BEGIN (implicit)
+2022-11-21 16:14:59,657 -- INSERT INTO employeeslanguages (id, employee_id, language_id) VALUES (%(id)s, %(employee_id)s, %(language_id)s)
+2022-11-21 16:14:59,665 -- [cached since 128.3s ago] {'id': UUID('1cd86563-1946-4bc2-8c48-146b7d5c1a62'), 'employee_id': UUID('ab076919-b8d9-44fb-9b2a-92c74f6aa8a9'), 'language_id': UUID('93b7dce5-7f17-426b-9a5e-8b35af2c6dcd')}
+2022-11-21 16:14:59,673 -- COMMIT
+2022-11-21 16:14:59,681 -- BEGIN (implicit)
+2022-11-21 16:14:59,689 -- SELECT employeeslanguages.id, employeeslanguages.employee_id, employeeslanguages.language_id 
+FROM employeeslanguages 
+WHERE employeeslanguages.id = %(pk_1)s
+2022-11-21 16:14:59,689 -- [cached since 128.3s ago] {'pk_1': UUID('1cd86563-1946-4bc2-8c48-146b7d5c1a62')}
+2022-11-21 16:14:59,703 -- ROLLBACK
+2022-11-21 16:16:00,370 -- BEGIN (implicit)
+2022-11-21 16:16:00,370 -- INSERT INTO employeeslanguages (id, employee_id, language_id) VALUES (%(id)s, %(employee_id)s, %(language_id)s)
+2022-11-21 16:16:00,378 -- [cached since 189s ago] {'id': UUID('d0562f5a-80b8-4c4e-8bdc-686ea48ab8f6'), 'employee_id': UUID('e8ab862d-66ba-4475-8dfd-3794c0a67493'), 'language_id': UUID('790d8c48-df70-4fb7-9383-111cf78fc4fa')}
+2022-11-21 16:16:00,386 -- COMMIT
+2022-11-21 16:16:00,394 -- BEGIN (implicit)
+2022-11-21 16:16:00,394 -- SELECT employeeslanguages.id, employeeslanguages.employee_id, employeeslanguages.language_id 
+FROM employeeslanguages 
+WHERE employeeslanguages.id = %(pk_1)s
+2022-11-21 16:16:00,402 -- [cached since 189s ago] {'pk_1': UUID('d0562f5a-80b8-4c4e-8bdc-686ea48ab8f6')}
+2022-11-21 16:16:00,418 -- ROLLBACK
+2022-11-21 16:16:18,199 -- BEGIN (implicit)
+2022-11-21 16:16:18,199 -- SELECT employeeslanguages.id AS employeeslanguages_id, employeeslanguages.employee_id AS employeeslanguages_employee_id, employeeslanguages.language_id AS employeeslanguages_language_id 
+FROM employeeslanguages
+2022-11-21 16:16:18,207 -- [generated in 0.00206s] {}
+2022-11-21 16:16:18,215 -- ROLLBACK
+2022-11-21 16:31:58,232 -- BEGIN (implicit)
+2022-11-21 16:31:58,236 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees
+2022-11-21 16:31:58,236 -- [generated in 0.00067s] {}
+2022-11-21 16:31:58,251 -- ROLLBACK
+2022-11-21 16:32:28,911 -- BEGIN (implicit)
+2022-11-21 16:32:28,917 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages JOIN employeeslanguages ON languages.id = employeeslanguages.language_id JOIN employees ON employees.id = employeeslanguages.employee_id 
+WHERE languages.id = %(id_1)s AND employeeslanguages.employee_id = employees.id 
+ LIMIT %(param_1)s
+2022-11-21 16:32:28,918 -- [generated in 0.00139s] {'id_1': UUID('bcd49b62-e70e-4424-af7f-1aa2eeccde14'), 'param_1': 1}
+2022-11-21 16:32:28,929 -- ROLLBACK
+2022-11-21 16:34:27,305 -- BEGIN (implicit)
+2022-11-21 16:34:27,313 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 16:34:27,315 -- [generated in 0.00212s] {}
+2022-11-21 16:34:27,328 -- ROLLBACK
+2022-11-21 16:44:42,750 -- BEGIN (implicit)
+2022-11-21 16:44:42,754 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 16:44:42,755 -- [generated in 0.00066s] {}
+2022-11-21 16:44:42,767 -- ROLLBACK
+2022-11-21 17:04:27,586 -- BEGIN (implicit)
+2022-11-21 17:04:27,590 -- SELECT employeeslanguages.id AS employeeslanguages_id, employeeslanguages.employee_id AS employeeslanguages_employee_id, employeeslanguages.language_id AS employeeslanguages_language_id 
+FROM employeeslanguages
+2022-11-21 17:04:27,591 -- [generated in 0.00110s] {}
+2022-11-21 17:04:27,602 -- ROLLBACK
+2022-11-21 17:05:35,389 -- BEGIN (implicit)
+2022-11-21 17:05:35,393 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees JOIN employeeslanguages ON employees.id = employeeslanguages.employee_id JOIN languages ON languages.id = employeeslanguages.language_id 
+WHERE employees.id = employeeslanguages.employee_id AND employeeslanguages.language_id = languages.id
+2022-11-21 17:05:35,394 -- [generated in 0.00105s] {}
+2022-11-21 17:05:35,415 -- ROLLBACK
+2022-11-21 17:06:50,875 -- BEGIN (implicit)
+2022-11-21 17:06:50,881 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees JOIN employeeslanguages ON employees.id = employeeslanguages.employee_id JOIN languages ON languages.id = employeeslanguages.language_id 
+WHERE employees.id = employeeslanguages.employee_id AND employeeslanguages.language_id = languages.id
+2022-11-21 17:06:50,887 -- [generated in 0.00608s] {}
+2022-11-21 17:06:50,904 -- ROLLBACK
+2022-11-21 17:10:03,646 -- BEGIN (implicit)
+2022-11-21 17:10:03,648 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 17:10:03,648 -- [generated in 0.00056s] {}
+2022-11-21 17:10:03,655 -- ROLLBACK
+2022-11-21 17:11:32,345 -- BEGIN (implicit)
+2022-11-21 17:11:32,350 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees JOIN employeeslanguages ON employees.id = employeeslanguages.employee_id JOIN languages ON languages.id = employeeslanguages.language_id 
+WHERE employees.id = employeeslanguages.employee_id AND employeeslanguages.language_id = languages.id
+2022-11-21 17:11:32,351 -- [cached since 281.5s ago] {}
+2022-11-21 17:11:32,359 -- ROLLBACK
+2022-11-21 17:18:21,564 -- BEGIN (implicit)
+2022-11-21 17:18:21,572 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees JOIN employeeslanguages ON employees.id = employeeslanguages.employee_id JOIN languages ON languages.id = employeeslanguages.language_id 
+WHERE employees.id = employeeslanguages.employee_id AND employeeslanguages.language_id = %(language_id_1)s
+2022-11-21 17:18:21,573 -- [generated in 0.00097s] {'language_id_1': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312')}
+2022-11-21 17:18:21,599 -- ROLLBACK
+2022-11-21 17:19:25,656 -- BEGIN (implicit)
+2022-11-21 17:19:25,660 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 17:19:25,660 -- [generated in 0.00060s] {}
+2022-11-21 17:19:25,674 -- ROLLBACK
+2022-11-21 17:20:06,531 -- BEGIN (implicit)
+2022-11-21 17:20:06,538 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees JOIN employeeslanguages ON employees.id = employeeslanguages.employee_id JOIN languages ON languages.id = employeeslanguages.language_id 
+WHERE employees.id = employeeslanguages.employee_id AND employeeslanguages.language_id = %(language_id_1)s
+2022-11-21 17:20:06,539 -- [generated in 0.00100s] {'language_id_1': UUID('61031184-5f07-461c-80b0-69bfe17f2b01')}
+2022-11-21 17:20:06,558 -- ROLLBACK
+2022-11-21 17:20:30,900 -- BEGIN (implicit)
+2022-11-21 17:20:30,902 -- SELECT employees.id AS employees_id, employees.department_id AS employees_department_id, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.dob AS employees_dob, employees.gender AS employees_gender, employees.phone_number AS employees_phone_number, employees.personal_email_id AS employees_personal_email_id, employees.is_department_head AS employees_is_department_head 
+FROM employees
+2022-11-21 17:20:30,907 -- [generated in 0.00548s] {}
+2022-11-21 17:20:30,913 -- ROLLBACK
+2022-11-21 17:21:13,291 -- BEGIN (implicit)
+2022-11-21 17:21:13,293 -- SELECT employeeslanguages.id AS employeeslanguages_id, employeeslanguages.employee_id AS employeeslanguages_employee_id, employeeslanguages.language_id AS employeeslanguages_language_id 
+FROM employeeslanguages
+2022-11-21 17:21:13,295 -- [generated in 0.00172s] {}
+2022-11-21 17:21:13,302 -- ROLLBACK
+2022-11-21 17:22:56,513 -- BEGIN (implicit)
+2022-11-21 17:22:56,521 -- INSERT INTO employeeslanguages (id, employee_id, language_id) VALUES (%(id)s, %(employee_id)s, %(language_id)s)
+2022-11-21 17:22:56,521 -- [generated in 0.00086s] {'id': UUID('8222757d-38cc-4db3-a96a-83442737c185'), 'employee_id': UUID('bcd49b62-e70e-4424-af7f-1aa2eeccde14'), 'language_id': UUID('7e9841ad-2356-4fda-98d1-95e3cf10d312')}
+2022-11-21 17:22:56,555 -- COMMIT
+2022-11-21 17:22:56,564 -- BEGIN (implicit)
+2022-11-21 17:22:56,567 -- SELECT employeeslanguages.id, employeeslanguages.employee_id, employeeslanguages.language_id 
+FROM employeeslanguages 
+WHERE employeeslanguages.id = %(pk_1)s
+2022-11-21 17:22:56,567 -- [generated in 0.00073s] {'pk_1': UUID('8222757d-38cc-4db3-a96a-83442737c185')}
+2022-11-21 17:22:56,573 -- ROLLBACK
+2022-11-21 17:35:57,855 -- BEGIN (implicit)
+2022-11-21 17:35:57,858 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 17:35:57,859 -- [generated in 0.00060s] {}
+2022-11-21 17:35:57,871 -- ROLLBACK
+2022-11-21 17:36:08,523 -- BEGIN (implicit)
+2022-11-21 17:36:08,526 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name ILIKE %(name_1)s
+2022-11-21 17:36:08,530 -- [generated in 0.00245s] {'name_1': '%py%'}
+2022-11-21 17:36:08,544 -- ROLLBACK
+2022-11-21 17:36:18,572 -- BEGIN (implicit)
+2022-11-21 17:36:18,573 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name ILIKE %(name_1)s
+2022-11-21 17:36:18,575 -- [cached since 10.05s ago] {'name_1': '%v%'}
+2022-11-21 17:36:18,584 -- ROLLBACK
+2022-11-21 17:36:25,991 -- BEGIN (implicit)
+2022-11-21 17:36:25,992 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages 
+WHERE languages.name ILIKE %(name_1)s
+2022-11-21 17:36:25,997 -- [cached since 17.47s ago] {'name_1': '%++%'}
+2022-11-21 17:36:26,001 -- ROLLBACK
+2022-11-21 17:36:33,516 -- BEGIN (implicit)
+2022-11-21 17:36:33,518 -- SELECT languages.id AS languages_id, languages.name AS languages_name 
+FROM languages
+2022-11-21 17:36:33,523 -- [cached since 35.66s ago] {}
+2022-11-21 17:36:33,533 -- ROLLBACK

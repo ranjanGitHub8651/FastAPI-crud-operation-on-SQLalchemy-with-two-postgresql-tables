@@ -75,7 +75,7 @@ class DepartmentUpdateRequest(BaseModel):
         orm_mode = True
 
 
-# *********************** Working on Application Table  **************
+# *********************** Working on Application Table  ********************
 
 
 class CreateApplicationRequest(BaseModel):
@@ -116,6 +116,59 @@ class ApplicationResponse(BaseModel):
     reason: str | None
     balance_before_approval: int | None
     balance_after_approval: int | None
+
+    class Config:
+        orm_mode = True
+
+
+# ********************** Working on Language Table ************************
+
+
+class CreateLanguage(BaseModel):
+    name: str
+
+    class Config:
+        orm_mode = True
+
+
+class LanguageResponse(BaseModel):
+    id: uuid.UUID
+    name: str
+
+    class Config:
+        orm_mode = True
+
+
+class UpdateLanguage(BaseModel):
+    name: str | None
+
+    class Config:
+        orm_mode = True
+
+
+# *********************** Working on EmployeeLanguages Table ******************
+
+
+class UpdateEmployeLanguage(BaseModel):
+    employee_id: uuid.UUID
+    language_id: uuid.UUID
+
+    class Config:
+        orm_mode = True
+
+
+class ResponseEmployeeLanguages(BaseModel):
+    id: uuid.UUID
+    employee_id: uuid.UUID | None
+    language_id: uuid.UUID | None
+
+    class Config:
+        orm_mode = True
+
+
+class CreateEmployeeLangaugaes(BaseModel):
+    employee_id: uuid.UUID
+    language_id: uuid.UUID
 
     class Config:
         orm_mode = True
